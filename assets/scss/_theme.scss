@@ -48,6 +48,11 @@ a {
   }
 }
 
+img {
+  max-width: 100%;
+  height: auto;
+}
+
 /*---------------------------------------------
 // ENDS [$universal]
 ----------------------------------------------*/
@@ -65,16 +70,30 @@ a {
 ----------------------------------------------*/
 
 /*---------------------------------------------
+[$site-logo]
+----------------------------------------------*/
+
+.site-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/*---------------------------------------------
+// ENDS [$site-logo]
+----------------------------------------------*/
+
+/*---------------------------------------------
 [$site-nav]
 ----------------------------------------------*/
 
 .site-nav {
   @include uppercase();
   font-size: 0.7em;
+  text-align: center;
 
   li {
     display: inline-block;
-    margin-right: 45px;
+    margin: 0 20px;
   }
 
   a {
@@ -84,4 +103,145 @@ a {
 
 /*---------------------------------------------
 // ENDS [$site-nav]
+----------------------------------------------*/
+
+/*---------------------------------------------
+[$info-block]
+----------------------------------------------*/
+
+.info-block {
+}
+
+.info-block__title {
+  margin-bottom: 20px;
+  text-align: center;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 2.4rem;
+  }
+}
+
+.info-block__title--fancy {
+  &::after {
+    content: "";
+    display: inline-block;
+    width: 23px;
+    height: 2px;
+    background: $brand-color;
+    margin-bottom: 5px;
+  }
+}
+
+.info-block__title--bigger {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-size: 4rem;
+    color: #0b0c11;
+  }
+}
+
+.info-block__body {
+  p {
+    color: #616161;
+    font-size: 0.9rem;
+  }
+}
+
+.info-block__subtitle {
+  @include uppercase();
+  color: $brand-color;
+  font-size: 0.7rem;
+  font-family: $body;
+  display: block;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+  }
+}
+
+.info-block__cta {
+  @include uppercase();
+  font-size: 0.7rem;
+
+  a {
+    border-bottom: 2px solid $brand-color;
+  }
+}
+
+/*---------------------------------------------
+// ENDS [$info-block]
+----------------------------------------------*/
+
+/*---------------------------------------------
+[$hero]
+----------------------------------------------*/
+
+.hero {
+}
+
+.hero__text {
+}
+
+.hero__img {
+}
+
+/*---------------------------------------------
+// ENDS [$hero]
+----------------------------------------------*/
+
+/*---------------------------------------------
+[$media+query]
+----------------------------------------------*/
+
+@media (min-width: 720px) {
+  .site-nav,
+  .site-logo {
+    text-align: left;
+  }
+
+  .site-logo {
+    margin-bottom: 0;
+  }
+}
+
+@media (min-width: 800px) {
+  .hero {
+    position: relative;
+  }
+
+  .hero__text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 45%;
+  }
+
+  .hero__img {
+    text-align: right;
+
+    img {
+      width: 85%;
+    }
+  }
+
+  .info-block__title {
+    text-align: left;
+  }
+}
+
+/*---------------------------------------------
+// ENDS [$media+query]
 ----------------------------------------------*/
